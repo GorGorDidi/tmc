@@ -614,7 +614,7 @@ Partial Class keyboard
         '
         'txtTest
         '
-        Me.txtTest.Location = New System.Drawing.Point(244, 396)
+        Me.txtTest.Location = New System.Drawing.Point(257, 353)
         Me.txtTest.Name = "txtTest"
         Me.txtTest.Size = New System.Drawing.Size(332, 20)
         Me.txtTest.TabIndex = 42
@@ -623,7 +623,7 @@ Partial Class keyboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(912, 468)
+        Me.ClientSize = New System.Drawing.Size(912, 398)
         Me.Controls.Add(Me.txtTest)
         Me.Controls.Add(Me.Button42)
         Me.Controls.Add(Me.Button41)

@@ -1,4 +1,6 @@
 ﻿Public Class frmsMember
+    Dim alhandler As frmTouchKeyboard.KeyboardHandler = AddressOf touchKeyPressed
+    Dim textBoxBackColor As Color
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
         Me.Close()
@@ -17,21 +19,37 @@
     End Sub
 
     Private Sub btnEdit_Click(sender As System.Object, e As System.EventArgs) Handles btnEdit.Click
-        txtRemarks.Enabled = True
 
-        ''Dim working_area As Rectangle = SystemInformation.WorkingArea
-        ''Dim x As Integer = _
-        ''    working_area.Left + working_area.Width - keyboard.Width
-        ''Dim y As Integer = _
-        ''    working_area.Bottom + working_area.Height - keyboard.Height
+        textBoxBackColor = txtRemarks.BackColor
 
-        ''keyboard.Location = New Point(x, 500)
-        keyboard.ShowDialog()
+        txtRemarks.BackColor = Color.White
+
+        Dim txtRemarksPos As Point = txtRemarks.PointToScreen(New Point(0, 0))
+        frmTouchKeyboard.Location = New Point(txtRemarksPos.X, txtRemarksPos.Y + txtRemarks.Height)
+        frmTouchKeyboard.Target = txtRemarks
+
+        AddHandler frmTouchKeyboard.UserKeyPressed, alhandler
+
+        frmTouchKeyboard.Show()
+
 
     End Sub
 
     Private Sub btnSave_Click(sender As System.Object, e As System.EventArgs) Handles btnSave.Click
-        txtRemarks.Enabled = False
-        keyboard.Close()
+
+        txtRemarks.BackColor = textBoxBackColor
+
+        RemoveHandler frmTouchKeyboard.UserKeyPressed, alhandler
+
+        frmTouchKeyboard.Close()
+
+
     End Sub
+
+    Private Sub touchKeyPressed(ByVal sender As Object, ByVal e As frmTouchKeyboard.KeyboardEventArgs)
+
+        SendKeys.Send(e.KeyboardPressed)
+
+    End Sub
+
 End Class

@@ -96,6 +96,12 @@
     <Compile Include="frmStaff.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmTouchKeyboard.Designer.vb">
+      <DependentUpon>frmTouchKeyboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTouchKeyboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="keyboard.Designer.vb">
       <DependentUpon>keyboard.vb</DependentUpon>
     </Compile>
@@ -140,6 +146,9 @@
     <EmbeddedResource Include="frmStaff.resx">
       <DependentUpon>frmStaff.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTouchKeyboard.resx">
+      <DependentUpon>frmTouchKeyboard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="keyboard.resx">
       <DependentUpon>keyboard.vb</DependentUpon>
     </EmbeddedResource>
@@ -171,7 +180,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\shift_down_white.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard_white.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caps_down_white.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

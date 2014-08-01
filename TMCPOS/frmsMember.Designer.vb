@@ -269,10 +269,12 @@ Partial Class frmsMember
         '
         'txtRemarks
         '
-        Me.txtRemarks.Enabled = False
+        Me.txtRemarks.BackColor = System.Drawing.SystemColors.Control
         Me.txtRemarks.Location = New System.Drawing.Point(209, 50)
         Me.txtRemarks.Multiline = True
         Me.txtRemarks.Name = "txtRemarks"
+        Me.txtRemarks.ReadOnly = True
+        Me.txtRemarks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtRemarks.Size = New System.Drawing.Size(343, 88)
         Me.txtRemarks.TabIndex = 14
         '
