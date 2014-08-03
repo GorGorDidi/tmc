@@ -77,6 +77,9 @@ Partial Class frmTouchKeyboard
         '
         'imgKeyboard
         '
+        Me.imgKeyboard.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.imgKeyboard.Image = Global.TMCPOS.My.Resources.Resources.keyboard_white
         Me.imgKeyboard.Location = New System.Drawing.Point(12, 12)
         Me.imgKeyboard.Name = "imgKeyboard"
@@ -104,6 +107,7 @@ Partial Class frmTouchKeyboard
         Me.Controls.Add(Me.txtTest)
         Me.Controls.Add(Me.imgKeyboard)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Location = New System.Drawing.Point(0, 100)
         Me.Name = "frmTouchKeyboard"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual

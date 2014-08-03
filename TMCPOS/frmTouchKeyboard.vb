@@ -254,7 +254,7 @@
         mousePos.Y = 342 * (mousePos.Y / imgKeyboard.Height)
 
         pvtKeyboardKeyPressed = HandleTheMouseClick(mousePos)
-        'txtTest.Text = pvtKeyboardKeyPressed
+        txtTest.Text = pvtKeyboardKeyPressed
         If Not String.IsNullOrEmpty(pvtKeyboardKeyPressed) Then
             Dim dea As KeyboardEventArgs = New KeyboardEventArgs(pvtKeyboardKeyPressed)
 
@@ -309,7 +309,29 @@
         HandleCapsLock()
     End Sub
 
+    
+
     Private Sub txtTest_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTest.TextChanged
         Data = txtTest.Text
+    End Sub
+
+    Private Sub imgKeyboard_SizeChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles imgKeyboard.SizeChanged
+        ' position the capslock and shift down overlays
+        pictureBoxCapsLockDown.Left = Convert.ToInt16(imgKeyboard.Width * 12 / 1248) + 2
+        pictureBoxCapsLockDown.Top = Convert.ToInt16(imgKeyboard.Height * 150 / 340)
+        pictureBoxLeftShiftDown.Left = Convert.ToInt16(imgKeyboard.Width * 12 / 1248) + 2
+        pictureBoxLeftShiftDown.Top = Convert.ToInt16(imgKeyboard.Height * 217 / 340)
+        pictureBoxRightShiftDown.Left = Convert.ToInt16(imgKeyboard.Width * 867 / 1248) + 4
+        pictureBoxRightShiftDown.Top = pictureBoxLeftShiftDown.Top
+
+
+        ' size the capslock and shift down overlays
+
+        pictureBoxCapsLockDown.Width = Convert.ToInt16(imgKeyboard.Width * 142 / 1248)
+        pictureBoxCapsLockDown.Height = Convert.ToInt16(imgKeyboard.Height * 67 / 342)
+        pictureBoxLeftShiftDown.Width = Convert.ToInt16(imgKeyboard.Width * 177 / 1248) - 4
+        pictureBoxLeftShiftDown.Height = Convert.ToInt16(imgKeyboard.Height * 67 / 342)
+        pictureBoxRightShiftDown.Width = Convert.ToInt16(imgKeyboard.Width * 169 / 1248) - 0
+        pictureBoxRightShiftDown.Height = pictureBoxLeftShiftDown.Height
     End Sub
 End Class

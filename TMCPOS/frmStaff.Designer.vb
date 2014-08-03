@@ -22,15 +22,13 @@ Partial Class frmStaff
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmStaff))
         Me.lblTimeNow = New System.Windows.Forms.Label()
         Me.btnClock = New System.Windows.Forms.Button()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelTouchKeyboard = New System.Windows.Forms.Panel()
         Me.SuspendLayout()
         '
         'lblTimeNow
@@ -90,14 +88,13 @@ Partial Class frmStaff
         Me.txtPassword.Size = New System.Drawing.Size(343, 38)
         Me.txtPassword.TabIndex = 5
         '
-        'PictureBox1
+        'panelTouchKeyboard
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(102, 356)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(767, 256)
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
+        Me.panelTouchKeyboard.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.panelTouchKeyboard.Location = New System.Drawing.Point(12, 324)
+        Me.panelTouchKeyboard.Name = "panelTouchKeyboard"
+        Me.panelTouchKeyboard.Size = New System.Drawing.Size(1014, 297)
+        Me.panelTouchKeyboard.TabIndex = 7
         '
         'frmStaff
         '
@@ -105,7 +102,7 @@ Partial Class frmStaff
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Lavender
         Me.ClientSize = New System.Drawing.Size(1038, 633)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.panelTouchKeyboard)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.Label1)
@@ -118,7 +115,6 @@ Partial Class frmStaff
         Me.Name = "frmStaff"
         Me.ShowInTaskbar = False
         Me.Text = "frmStaff"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -129,5 +125,5 @@ Partial Class frmStaff
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents panelTouchKeyboard As System.Windows.Forms.Panel
 End Class
