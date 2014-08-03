@@ -317,21 +317,21 @@
 
     Private Sub imgKeyboard_SizeChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles imgKeyboard.SizeChanged
         ' position the capslock and shift down overlays
-        pictureBoxCapsLockDown.Left = Convert.ToInt16(imgKeyboard.Width * 12 / 1248) + 2
-        pictureBoxCapsLockDown.Top = Convert.ToInt16(imgKeyboard.Height * 150 / 340)
-        pictureBoxLeftShiftDown.Left = Convert.ToInt16(imgKeyboard.Width * 12 / 1248) + 2
+        pictureBoxCapsLockDown.Left = Convert.ToInt16(imgKeyboard.Width * 12 / 1248) + 6
+        pictureBoxCapsLockDown.Top = Convert.ToInt16(imgKeyboard.Height * 150 / 340) + 1
+        pictureBoxLeftShiftDown.Left = Convert.ToInt16(imgKeyboard.Width * 12 / 1248) + 6
         pictureBoxLeftShiftDown.Top = Convert.ToInt16(imgKeyboard.Height * 217 / 340)
-        pictureBoxRightShiftDown.Left = Convert.ToInt16(imgKeyboard.Width * 867 / 1248) + 4
+        pictureBoxRightShiftDown.Left = Convert.ToInt16(imgKeyboard.Width * 867 / 1248) + 3
         pictureBoxRightShiftDown.Top = pictureBoxLeftShiftDown.Top
 
 
         ' size the capslock and shift down overlays
 
-        pictureBoxCapsLockDown.Width = Convert.ToInt16(imgKeyboard.Width * 142 / 1248)
+        pictureBoxCapsLockDown.Width = Convert.ToInt16(imgKeyboard.Width * 142 / 1248) - 4
         pictureBoxCapsLockDown.Height = Convert.ToInt16(imgKeyboard.Height * 67 / 342)
         pictureBoxLeftShiftDown.Width = Convert.ToInt16(imgKeyboard.Width * 177 / 1248) - 4
         pictureBoxLeftShiftDown.Height = Convert.ToInt16(imgKeyboard.Height * 67 / 342)
-        pictureBoxRightShiftDown.Width = Convert.ToInt16(imgKeyboard.Width * 169 / 1248) - 0
+        pictureBoxRightShiftDown.Width = Convert.ToInt16(imgKeyboard.Width * 169 / 1248) + 1
         pictureBoxRightShiftDown.Height = pictureBoxLeftShiftDown.Height
     End Sub
 End Class
