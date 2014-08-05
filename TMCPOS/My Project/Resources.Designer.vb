@@ -74,6 +74,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property numericKeypad() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("numericKeypad", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property shift_down_white() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("shift_down_white", resourceCulture)
