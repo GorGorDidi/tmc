@@ -99,7 +99,7 @@ Partial Class frmTouchKeyboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1272, 358)
+        Me.ClientSize = New System.Drawing.Size(1272, 360)
         Me.Controls.Add(Me.txtTest2)
         Me.Controls.Add(Me.pictureBoxCapsLockDown)
         Me.Controls.Add(Me.pictureBoxRightShiftDown)

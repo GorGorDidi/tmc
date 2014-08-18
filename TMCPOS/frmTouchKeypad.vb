@@ -127,9 +127,12 @@
         pvtKeypadKeyPressed = HandleTheMouseClick(mousePos)
         'txtTest.Text = pvtKeypadKeyPressed
         If Not String.IsNullOrEmpty(pvtKeypadKeyPressed) Then
-            Dim dea As KeypadEventArgs = New KeypadEventArgs(pvtKeypadKeyPressed)
+            
+                Dim dea As KeypadEventArgs = New KeypadEventArgs(pvtKeypadKeyPressed)
 
-            OnUserKeyPressed(dea)
+                OnUserKeyPressed(dea)
+
+
         End If
     End Sub
 

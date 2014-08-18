@@ -6,7 +6,7 @@
     Private Sub frmStaff_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         UpdateClockTime()
-        txtUsername.Focus()
+
 
         frmTouchKeyboard.TopLevel = False
         frmTouchKeyboard.Location = New Point(0, 0)
@@ -16,6 +16,7 @@
 
         AddHandler frmTouchKeyboard.UserKeyPressed, alhandler
         frmTouchKeyboard.Show()
+        txtUsername.Select()
 
     End Sub
 
@@ -67,4 +68,6 @@
         TimerResetClockBtnColor.Enabled = False
         btnClock.BackColor = Color.Red
     End Sub
+
+    
 End Class

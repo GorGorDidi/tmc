@@ -12,6 +12,17 @@
         End Get
         Set(ByVal value As Object)
             vTarget = value
+            If TypeOf vTarget Is TextBox Then
+                Dim vTextbox As TextBox = DirectCast(vTarget, TextBox)
+                If (vTextbox.Text.Length > 0) Then
+                    txtTest.Text = vTextbox.Text
+                Else
+                    txtTest.Text = ""
+                End If
+
+                txtTest.SelectionStart = vTextbox.Text.Length
+                txtTest.ScrollToCaret()
+            End If
         End Set
     End Property
     Public Property Data As String
@@ -21,15 +32,16 @@
         Set(ByVal value As String)
             vData = value
             If value = "" Then
-                txtTest.Text = ""
+                'txtTest.Text = ""
 
             Else
-                
+
                 'check if there is target and is a textbox control
                 If Not vTarget Is Nothing Then
                     If TypeOf vTarget Is TextBox Then
                         Dim vTextbox As TextBox = DirectCast(vTarget, TextBox)
                         vTextbox.Text = value
+                        
                         vTextbox.SelectionStart = vTextbox.Text.Length
                         vTextbox.ScrollToCaret()
                     End If
@@ -254,7 +266,7 @@
         mousePos.Y = 342 * (mousePos.Y / imgKeyboard.Height)
 
         pvtKeyboardKeyPressed = HandleTheMouseClick(mousePos)
-        txtTest.Text = pvtKeyboardKeyPressed
+        'txtTest.Text = pvtKeyboardKeyPressed
         If Not String.IsNullOrEmpty(pvtKeyboardKeyPressed) Then
             Dim dea As KeyboardEventArgs = New KeyboardEventArgs(pvtKeyboardKeyPressed)
 
@@ -308,8 +320,6 @@
     Private Sub pictureBoxCapsLockDown_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles pictureBoxCapsLockDown.MouseClick
         HandleCapsLock()
     End Sub
-
-    
 
     Private Sub txtTest_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTest.TextChanged
         Data = txtTest.Text

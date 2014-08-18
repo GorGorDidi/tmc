@@ -15,8 +15,8 @@
         'Form Reset
         txtLockerNumber.Enabled = False
         ActiveControl = txtRFID
-        'txtLockerNumber.Text = ""
-        'txtRFID.Text = ""
+        txtLockerNumber.Text = ""
+        txtRFID.Text = ""
         lockerNumber = 0
     End Sub
 
@@ -34,14 +34,7 @@
 
     Private Sub txtLockerNumber_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtLockerNumber.TextChanged
         If Not txtLockerNumber.Enabled Then
-            If RegisterLocker() = False Then
-                MsgBox("Invalid Token")
-            Else
-                frmSales.LockerNumber = lockerNumber
-                txtLockerNumber.Text = ""
-                txtRFID.Text = ""
-                Me.Close()
-            End If
+            AssignLocker()
         End If
 
     End Sub
@@ -56,7 +49,36 @@
 
     Private Sub touchKeyPressed(ByVal sender As Object, ByVal e As frmTouchKeypad.KeypadEventArgs)
 
-        SendKeys.Send(e.KeyboardPressed)
+        If String.Compare(e.KeyboardPressed, "{ENTER}") = 0 Then
+            AssignLocker()
+        Else
+
+            SendKeys.Send(e.KeyboardPressed)
+        End If
+
+    End Sub
+
+    Private Sub frmsLocker_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+        CloseForm()
+    End Sub
+
+    Private Sub CloseForm()
+        If (frmTouchKeypad.IsHandleCreated) Then
+            RemoveHandler frmTouchKeypad.UserKeyPressed, alhandler
+
+            frmTouchKeypad.Close()
+        End If
+    End Sub
+
+    Private Sub AssignLocker()
+        If RegisterLocker() = False Then
+            MsgBox("Invalid Token")
+        Else
+            frmSales.LockerNumber = lockerNumber
+            txtLockerNumber.Text = ""
+            txtRFID.Text = ""
+            Me.Close()
+        End If
 
     End Sub
 End Class

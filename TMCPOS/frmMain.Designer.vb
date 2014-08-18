@@ -30,15 +30,19 @@ Partial Class frmMain
         Me.btnInventory = New System.Windows.Forms.Button()
         Me.btnStaff = New System.Windows.Forms.Button()
         Me.btnSales = New System.Windows.Forms.Button()
+        Me.PanelSession = New System.Windows.Forms.Panel()
+        Me.btnLogout = New System.Windows.Forms.Button()
+        Me.lblStaffID = New System.Windows.Forms.Label()
         Me.PanelControl.SuspendLayout()
+        Me.PanelSession.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelForm
         '
         Me.PanelForm.BackColor = System.Drawing.Color.Transparent
-        Me.PanelForm.Location = New System.Drawing.Point(12, 12)
+        Me.PanelForm.Location = New System.Drawing.Point(12, 93)
         Me.PanelForm.Name = "PanelForm"
-        Me.PanelForm.Size = New System.Drawing.Size(1187, 654)
+        Me.PanelForm.Size = New System.Drawing.Size(1187, 573)
         Me.PanelForm.TabIndex = 0
         '
         'PanelControl
@@ -119,18 +123,52 @@ Partial Class frmMain
         Me.btnSales.Text = "Sales"
         Me.btnSales.UseVisualStyleBackColor = False
         '
+        'PanelSession
+        '
+        Me.PanelSession.Controls.Add(Me.lblStaffID)
+        Me.PanelSession.Controls.Add(Me.btnLogout)
+        Me.PanelSession.Location = New System.Drawing.Point(13, 13)
+        Me.PanelSession.Name = "PanelSession"
+        Me.PanelSession.Size = New System.Drawing.Size(1186, 74)
+        Me.PanelSession.TabIndex = 8
+        '
+        'btnLogout
+        '
+        Me.btnLogout.BackColor = System.Drawing.Color.Black
+        Me.btnLogout.BackgroundImage = CType(resources.GetObject("btnLogout.BackgroundImage"), System.Drawing.Image)
+        Me.btnLogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.ForeColor = System.Drawing.Color.White
+        Me.btnLogout.Location = New System.Drawing.Point(1068, 0)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(114, 71)
+        Me.btnLogout.TabIndex = 17
+        Me.btnLogout.Text = "Logout"
+        Me.btnLogout.UseVisualStyleBackColor = False
+        '
+        'lblStaffID
+        '
+        Me.lblStaffID.AutoSize = True
+        Me.lblStaffID.Location = New System.Drawing.Point(3, 9)
+        Me.lblStaffID.Name = "lblStaffID"
+        Me.lblStaffID.Size = New System.Drawing.Size(39, 13)
+        Me.lblStaffID.TabIndex = 18
+        Me.lblStaffID.Text = "Label1"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Lavender
         Me.ClientSize = New System.Drawing.Size(1207, 750)
+        Me.Controls.Add(Me.PanelSession)
         Me.Controls.Add(Me.PanelControl)
         Me.Controls.Add(Me.PanelForm)
         Me.Name = "frmMain"
         Me.Text = "TMCPOS"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelControl.ResumeLayout(False)
+        Me.PanelSession.ResumeLayout(False)
+        Me.PanelSession.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -141,4 +179,7 @@ Partial Class frmMain
     Friend WithEvents btnStaff As System.Windows.Forms.Button
     Friend WithEvents btnSales As System.Windows.Forms.Button
     Friend WithEvents btnClose As System.Windows.Forms.Button
+    Friend WithEvents PanelSession As System.Windows.Forms.Panel
+    Friend WithEvents btnLogout As System.Windows.Forms.Button
+    Friend WithEvents lblStaffID As System.Windows.Forms.Label
 End Class

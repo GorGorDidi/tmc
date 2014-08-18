@@ -39,7 +39,7 @@
             End If
         End Set
     End Property
-    Public Sub NumericMouseUp(ByVal sender As Object, ByVal e As EventArgs) Handles btnKey0.MouseUp, btnBackspace.MouseUp, btnKey2.MouseUp, btnKey3.MouseUp, btnKey4.MouseUp, btnKey5.MouseUp, btnKey6.MouseUp, btnKey7.MouseUp, btnKey8.MouseUp, btnKey9.MouseUp
+    Public Sub NumericMouseUp(ByVal sender As Object, ByVal e As EventArgs) Handles btnKey0.MouseUp, btnBackspace.MouseUp, btnKey1.MouseUp, btnKey2.MouseUp, btnKey3.MouseUp, btnKey4.MouseUp, btnKey5.MouseUp, btnKey6.MouseUp, btnKey7.MouseUp, btnKey8.MouseUp, btnKey9.MouseUp
         If sender Is btnKey0 And vData = "0" Then
             Exit Sub
         End If
@@ -55,10 +55,14 @@
 
     Private Sub btnEnter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEnter.Click
         DialogResult = DialogResult.OK
+        frmSales.PaymentSucceed = True
+
         Me.Close()
     End Sub
 
     Private Sub btnPass_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPass.Click
+        frmSales.PaymentSucceed = True
+
         Me.Close()
     End Sub
 
@@ -67,10 +71,13 @@
     End Sub
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
+        frmSales.PaymentSucceed = False
         Me.Close()
     End Sub
 
     Private Sub btnEzlink_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEzlink.Click
+        frmSales.PaymentSucceed = True
+
         Me.Close()
     End Sub
     Private Sub btnKeyDot_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnKeyDot.Click
